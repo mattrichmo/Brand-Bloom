@@ -1,5 +1,6 @@
 
 import { queryInitialization } from "./app/initialization/queryInitialization.mjs";
+import { brandNameIdeation } from "./app/ideation/brandNameIdeation.mjs";
 import chalk from 'chalk';
 
 import dotenv from 'dotenv';
@@ -17,7 +18,8 @@ export const mainVein = async () => {
     console.log(chalk.dim(`\n----------------------------------------\n`));
 
 
-    await queryInitialization(queryText);
+    let query = await queryInitialization(queryText);
+   query =  await brandNameIdeation(query);
 
 
 };
